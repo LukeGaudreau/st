@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-char font[] = "Ubuntu Mono:size=10:antialias=true:autohint=false";
+char font[] = "Iosevka:size=10:antialias=true:autohint=false";
 int borderpx = 2;
 
 /*
