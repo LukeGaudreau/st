@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-char font[] = "Iosevka:size=10:antialias=true:autohint=false";
-int borderpx = 2;
+char font[] = "monospace:size=10:antialias=true:autohint=false";
+int borderpx = 16;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -84,41 +84,38 @@ static unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 const char *colorname[] = {
-	/* 8 normal colors */
-	"#073642",
-	"#DC32FF",
-	"#859900",
-	"#B58900",
-	"#268BD2",
-	"#D33682",
-	"#2AA198",
-	"#EEE8D5",
+	/* solarized dark */
+	"#3B4252",  /*  0: black    */
+	"#BF616A",  /*  1: red      */
+	"#A3BE8C",  /*  2: green    */
+	"#EBCB8B",  /*  3: yellow   */
+	"#81A1C1",  /*  4: blue     */
+	"#B48EAD",  /*  5: magenta  */
+	"#88C0D0",  /*  6: cyan     */
+	"#E5E9F0",  /*  7: white    */
+	"#4C566A",  /*  8: brblack  */
+	"#BF616A",  /*  9: brred    */
+	"#A3BE8C",  /* 10: brgreen  */
+	"#EBCB8B",  /* 11: bryellow */
+	"#81A1C1",  /* 12: brblue   */
+	"#B48EAD",  /* 13: brmagenta*/
+	"#8FBCBB",  /* 14: brcyan   */
+	"#ECEFF4",  /* 15: brwhite  */
 
-	/* 8 bright colors */
-	"#002B36",
-	"#CB4616",
-	"#586E75",
-	"#657B83",
-	"#839496",
-	"#6C71C4",
-	"#93A1A1",
-	"#FDF6E3",
+  [255] = 0,
 
-	[255] = 0,
-
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#222222",
+  "#D8DEE9",
+  "#2E3440",
 };
-
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 11;
-unsigned int defaultbg = 15;
-unsigned int defaultcs = 10;
-unsigned int defaultrcs = 11;
+unsigned int defaultfg = 256;
+unsigned int defaultbg = 257;
+unsigned int defaultcs = 256;
+unsigned int defaultrcs = 0;
 
 /*
  * Default shape of cursor
